@@ -34,11 +34,12 @@ class ClovaSpeechListViewController: UIViewController {
                 guard let me = self else { return }
                 me.chatManager.appendChats(
                     Chat(text: me.bottomView.chatTextField.text ?? "",
-                         time: Date(), eventName: me.eventName, likeCount: 0
+                         time: Date(), eventName: me.eventName, likeCount: 0, user: User(id: -1)
                     ))
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
+        tableView.register(R.nib.clovaSpeechListCell)
     }
 
     override var inputAccessoryView: UIView? {
@@ -56,10 +57,9 @@ extension ClovaSpeechListViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.clovaSpeechListCell, for: indexPath)!
         let chats = chatManager.getChats(eventName: eventName)
-        cell.textLabel?.text = chats[indexPath.row].text
-        cell.detailTextLabel?.text = chats[indexPath.row].timeDescription
+        cell.set(chats[indexPath.row])
         return cell
     }
 
@@ -71,10 +71,15 @@ extension ClovaSpeechListViewController: UITableViewDelegate, UITableViewDataSou
             chat.likeCount += 1
             let newChats = chats.update(chat: chat)
             self?.chatManager.chats = newChats
+            DmManager.shared.append(Dm.init(type: .like(chat), time: Date(), user: chat.user))
             print("いいね")
             self?.tableView.reloadData()
         }))
-        sheet.addAction(.init(title: "返信", style: .default, handler: { (_) in
+        sheet.addAction(.init(title: "返信", style: .default, handler: { [weak self] (_) in
+            let dm = Dm(type: .post(chat), time: Date(), user: chat.user)
+            DmManager.shared.append(dm)
+            let vc = DmViewController.make(user: chat.user)
+            self?.navigationController?.pushViewController(vc, animated: true)
             print("返信")
         }))
         sheet.addAction(.init(title: "閉じる", style: .default, handler: nil))

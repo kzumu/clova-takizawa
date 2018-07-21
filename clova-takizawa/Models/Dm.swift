@@ -9,8 +9,9 @@
 import Foundation
 
 enum DmType {
+    case post(_: Chat)
     case text(_: String)
-    case like
+    case like(_: Chat)
 }
 
 struct Dm {
@@ -22,5 +23,9 @@ struct Dm {
         let df = DateFormatter()
         df.dateFormat = "HH:mm"
         return df.string(from: time)
+    }
+
+    var isMine: Bool {
+        return user.id == -1
     }
 }

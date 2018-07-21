@@ -12,8 +12,12 @@ struct User {
     let id: Int
 }
 
-extension User: Equatable {
+extension User: Equatable, Hashable {
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
+    }
+
+    var hashValue: Int {
+        return id.hashValue
     }
 }

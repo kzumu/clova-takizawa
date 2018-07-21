@@ -34,30 +34,61 @@ class DmViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
+        tableView.separatorColor = UIColor.clear
+        tableView.estimatedRowHeight = 10000
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
+        tableView.keyboardDismissMode = .interactive
+
         bottomView = ChatInputView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
         bottomView.sendButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let me = self else { return }
-                DmManager.shared.append(Dm.init(type: .text(me.bottomView.chatTextField.text ?? ""), time: Date(), user: me.user))
+                DmManager.shared.append(Dm.init(type: .text(me.bottomView.chatTextField.text ?? ""), time: Date(), user: User(id: -1)))
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
+
+        tableView.register(R.nib.dmPostCell)
+        tableView.register(R.nib.dmMyChatViewCell)
+        tableView.register(R.nib.dmYourChatViewCell)
     }
 
     override var inputAccessoryView: UIView? {
         return bottomView
     }
+
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
 }
 
 extension DmViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DmManager.shared.getUserIds.count
+        print(DmManager.shared.find(by: user).count)
+        return DmManager.shared.find(by: user).count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let id = DmManager.shared.getUserIds[indexPath.row]
-        cell.textLabel?.text = "ユーザ\(id)"
-        return cell
+        let dm = DmManager.shared.find(by: user)[indexPath.row]
+        switch dm.type {
+        case .like:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.dmPostCell, for: indexPath)!
+            cell.set(dm)
+            return cell
+        case .post:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.dmPostCell, for: indexPath)!
+            cell.set(dm)
+            return cell
+        case .text(let str):
+            if dm.isMine {
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.myChat, for: indexPath)!
+                cell.updateCell(text: str, time: dm.timeDescription, isRead: false)
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.dmYourChatViewCell, for: indexPath)!
+            cell.updateCell(text: str, time: dm.timeDescription)
+            return cell
+        }
     }
 }

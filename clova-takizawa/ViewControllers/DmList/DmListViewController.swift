@@ -34,13 +34,19 @@ class DmListViewController: UIViewController {
 
 extension DmListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DmManager.shared.getUserIds.count
+        return DmManager.shared.getUsers().count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let id = DmManager.shared.getUserIds[indexPath.row]
-        cell.textLabel?.text = "ユーザ\(id)"
+        let user = DmManager.shared.getUsers()[indexPath.row]
+        cell.textLabel?.text = "ユーザ\(user.id)"
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = DmManager.shared.getUsers()[indexPath.row]
+        let vc = DmViewController.make(user: user)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

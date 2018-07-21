@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		64F28D97BDDF5D4A0040E30F /* Pods_clova_takizawa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9E4337AF4D9C452ED127D5 /* Pods_clova_takizawa.framework */; };
-		6E59E3E021033CA7000098D9 /* DMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59E3DF21033CA7000098D9 /* DMManager.swift */; };
+		6E59E3E021033CA7000098D9 /* DmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59E3DF21033CA7000098D9 /* DmManager.swift */; };
 		6E59E3E221033CB0000098D9 /* Dm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59E3E121033CB0000098D9 /* Dm.swift */; };
 		6E59E3E4210347F4000098D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59E3E3210347F4000098D9 /* User.swift */; };
+		6E5C15EB210388200058718E /* ClovaSpeechListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C15E9210388200058718E /* ClovaSpeechListCell.swift */; };
+		6E5C15EC210388200058718E /* ClovaSpeechListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5C15EA210388200058718E /* ClovaSpeechListCell.xib */; };
+		6E5C15F321038D800058718E /* DmPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C15F121038D800058718E /* DmPostCell.swift */; };
+		6E5C15F421038D800058718E /* DmPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5C15F221038D800058718E /* DmPostCell.xib */; };
+		6E5C160421038FCD0058718E /* DmMyChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5C160221038FCD0058718E /* DmMyChatViewCell.xib */; };
+		6E5C160521038FCD0058718E /* DmMyChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C160321038FCD0058718E /* DmMyChatViewCell.swift */; };
+		6E5C160821038FD90058718E /* DmYourChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C160621038FD80058718E /* DmYourChatViewCell.swift */; };
+		6E5C160921038FD90058718E /* DmYourChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5C160721038FD90058718E /* DmYourChatViewCell.xib */; };
 		6E91E979210321EB001EFD8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91E978210321EB001EFD8A /* AppDelegate.swift */; };
 		6E91E97B210321EB001EFD8A /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91E97A210321EB001EFD8A /* TopViewController.swift */; };
 		6E91E97E210321EB001EFD8A /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E91E97C210321EB001EFD8A /* TopViewController.storyboard */; };
@@ -33,9 +41,17 @@
 
 /* Begin PBXFileReference section */
 		0B9E4337AF4D9C452ED127D5 /* Pods_clova_takizawa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clova_takizawa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E59E3DF21033CA7000098D9 /* DMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMManager.swift; sourceTree = "<group>"; };
+		6E59E3DF21033CA7000098D9 /* DmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmManager.swift; sourceTree = "<group>"; };
 		6E59E3E121033CB0000098D9 /* Dm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dm.swift; sourceTree = "<group>"; };
 		6E59E3E3210347F4000098D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6E5C15E9210388200058718E /* ClovaSpeechListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClovaSpeechListCell.swift; sourceTree = "<group>"; };
+		6E5C15EA210388200058718E /* ClovaSpeechListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClovaSpeechListCell.xib; sourceTree = "<group>"; };
+		6E5C15F121038D800058718E /* DmPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmPostCell.swift; sourceTree = "<group>"; };
+		6E5C15F221038D800058718E /* DmPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DmPostCell.xib; sourceTree = "<group>"; };
+		6E5C160221038FCD0058718E /* DmMyChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DmMyChatViewCell.xib; sourceTree = "<group>"; };
+		6E5C160321038FCD0058718E /* DmMyChatViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DmMyChatViewCell.swift; sourceTree = "<group>"; };
+		6E5C160621038FD80058718E /* DmYourChatViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DmYourChatViewCell.swift; sourceTree = "<group>"; };
+		6E5C160721038FD90058718E /* DmYourChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DmYourChatViewCell.xib; sourceTree = "<group>"; };
 		6E91E975210321EB001EFD8A /* clova-takizawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clova-takizawa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E91E978210321EB001EFD8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E91E97A210321EB001EFD8A /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +94,52 @@
 				6EF5A2B521034DC900C2842B /* DmListViewController.swift */,
 			);
 			path = DmList;
+			sourceTree = "<group>";
+		};
+		6E5C15E7210387F50058718E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C15E9210388200058718E /* ClovaSpeechListCell.swift */,
+				6E5C15EA210388200058718E /* ClovaSpeechListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6E5C15F521038EAD0058718E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C160B21038FE60058718E /* MyChat */,
+				6E5C160A21038FDD0058718E /* YourChat */,
+				6E5C15F621038EB30058718E /* Post */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6E5C15F621038EB30058718E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C15F121038D800058718E /* DmPostCell.swift */,
+				6E5C15F221038D800058718E /* DmPostCell.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		6E5C160A21038FDD0058718E /* YourChat */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C160621038FD80058718E /* DmYourChatViewCell.swift */,
+				6E5C160721038FD90058718E /* DmYourChatViewCell.xib */,
+			);
+			path = YourChat;
+			sourceTree = "<group>";
+		};
+		6E5C160B21038FE60058718E /* MyChat */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C160321038FCD0058718E /* DmMyChatViewCell.swift */,
+				6E5C160221038FCD0058718E /* DmMyChatViewCell.xib */,
+			);
+			path = MyChat;
 			sourceTree = "<group>";
 		};
 		6E91E96C210321EA001EFD8A = {
@@ -134,6 +196,7 @@
 		6EF5A2BD210351ED00C2842B /* Dm */ = {
 			isa = PBXGroup;
 			children = (
+				6E5C15F521038EAD0058718E /* Cell */,
 				6EF5A2BE2103520800C2842B /* DmViewController.swift */,
 			);
 			path = Dm;
@@ -167,6 +230,7 @@
 		6EFF34EE2103354E005E7F88 /* ClovaSpeechList */ = {
 			isa = PBXGroup;
 			children = (
+				6E5C15E7210387F50058718E /* Cell */,
 				6EFF34EA210334B3005E7F88 /* ClovaSpeechListViewController.swift */,
 				6EFF34EC210334C0005E7F88 /* ClovaSpeechList.storyboard */,
 			);
@@ -178,7 +242,7 @@
 			children = (
 				6EFF34E521032B1E005E7F88 /* ClovaManager.swift */,
 				6EFF34F221033993005E7F88 /* ChatManager.swift */,
-				6E59E3DF21033CA7000098D9 /* DMManager.swift */,
+				6E59E3DF21033CA7000098D9 /* DmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -264,9 +328,13 @@
 				6EFF34ED210334C0005E7F88 /* ClovaSpeechList.storyboard in Resources */,
 				6E91E983210321ED001EFD8A /* LaunchScreen.storyboard in Resources */,
 				6E91E980210321ED001EFD8A /* Assets.xcassets in Resources */,
+				6E5C160921038FD90058718E /* DmYourChatViewCell.xib in Resources */,
 				6E91E97E210321EB001EFD8A /* TopViewController.storyboard in Resources */,
 				6EFF34E4210328E1005E7F88 /* AddClovaViewController.storyboard in Resources */,
+				6E5C15EC210388200058718E /* ClovaSpeechListCell.xib in Resources */,
+				6E5C15F421038D800058718E /* DmPostCell.xib in Resources */,
 				6EF5A2BA2103504500C2842B /* ChatInputBottomView.xib in Resources */,
+				6E5C160421038FCD0058718E /* DmMyChatViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +413,16 @@
 				6E91E97B210321EB001EFD8A /* TopViewController.swift in Sources */,
 				6EF5A2B621034DC900C2842B /* DmListViewController.swift in Sources */,
 				6E91E979210321EB001EFD8A /* AppDelegate.swift in Sources */,
+				6E5C160821038FD90058718E /* DmYourChatViewCell.swift in Sources */,
 				6EFF34F021033690005E7F88 /* Chat.swift in Sources */,
 				6EFF34DF210324CA005E7F88 /* R.generated.swift in Sources */,
 				6EF5A2BF2103520800C2842B /* DmViewController.swift in Sources */,
 				6E59E3E221033CB0000098D9 /* Dm.swift in Sources */,
+				6E5C160521038FCD0058718E /* DmMyChatViewCell.swift in Sources */,
 				6EF5A2BC2103505300C2842B /* ChaInputBottomView.swift in Sources */,
-				6E59E3E021033CA7000098D9 /* DMManager.swift in Sources */,
+				6E5C15EB210388200058718E /* ClovaSpeechListCell.swift in Sources */,
+				6E5C15F321038D800058718E /* DmPostCell.swift in Sources */,
+				6E59E3E021033CA7000098D9 /* DmManager.swift in Sources */,
 				6EFF34E621032B1E005E7F88 /* ClovaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,11 +18,11 @@ class DmManager {
         return dms.filter { $0.user == user}
     }
 
-    var getUserIds: [Int] {
-        let users: [Int] = dms.map {
-            $0.user.id
+    func getUsers() -> [User] {
+        let users: [User] = dms.map {
+            $0.user
         }
-        return Set(users).flatMap { (i) -> [Int] in
+        return Set(users).flatMap { (i) -> [User] in
             return [i]
         }
     }

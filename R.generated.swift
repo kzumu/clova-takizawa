@@ -36,21 +36,58 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `ChatInputBottomView`.
     static let chatInputBottomView = _R.nib._ChatInputBottomView()
+    /// Nib `ClovaSpeechListCell`.
+    static let clovaSpeechListCell = _R.nib._ClovaSpeechListCell()
+    /// Nib `DmMyChatViewCell`.
+    static let dmMyChatViewCell = _R.nib._DmMyChatViewCell()
+    /// Nib `DmPostCell`.
+    static let dmPostCell = _R.nib._DmPostCell()
+    /// Nib `DmYourChatViewCell`.
+    static let dmYourChatViewCell = _R.nib._DmYourChatViewCell()
     
     /// `UINib(name: "ChatInputBottomView", in: bundle)`
     static func chatInputBottomView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.chatInputBottomView)
     }
     
+    /// `UINib(name: "ClovaSpeechListCell", in: bundle)`
+    static func clovaSpeechListCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.clovaSpeechListCell)
+    }
+    
+    /// `UINib(name: "DmMyChatViewCell", in: bundle)`
+    static func dmMyChatViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dmMyChatViewCell)
+    }
+    
+    /// `UINib(name: "DmPostCell", in: bundle)`
+    static func dmPostCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dmPostCell)
+    }
+    
+    /// `UINib(name: "DmYourChatViewCell", in: bundle)`
+    static func dmYourChatViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dmYourChatViewCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `ClovaSpeechListCell`.
+    static let clovaSpeechListCell: Rswift.ReuseIdentifier<ClovaSpeechListCell> = Rswift.ReuseIdentifier(identifier: "ClovaSpeechListCell")
+    /// Reuse identifier `DmPostCell`.
+    static let dmPostCell: Rswift.ReuseIdentifier<DmPostCell> = Rswift.ReuseIdentifier(identifier: "DmPostCell")
+    /// Reuse identifier `DmYourChatViewCell`.
+    static let dmYourChatViewCell: Rswift.ReuseIdentifier<DmYourChatViewCell> = Rswift.ReuseIdentifier(identifier: "DmYourChatViewCell")
+    /// Reuse identifier `MyChat`.
+    static let myChat: Rswift.ReuseIdentifier<DmMyChatViewCell> = Rswift.ReuseIdentifier(identifier: "MyChat")
+    
     fileprivate init() {}
   }
   
@@ -100,7 +137,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -111,14 +148,82 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
-  struct nib {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try nib.validate()
+  }
+  
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _DmYourChatViewCell.validate()
+    }
+    
     struct _ChatInputBottomView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ChatInputBottomView"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ClovaSpeechListCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ClovaSpeechListCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "ClovaSpeechListCell"
+      let name = "ClovaSpeechListCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ClovaSpeechListCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ClovaSpeechListCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _DmMyChatViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = DmMyChatViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "MyChat"
+      let name = "DmMyChatViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> DmMyChatViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DmMyChatViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _DmPostCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = DmPostCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "DmPostCell"
+      let name = "DmPostCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> DmPostCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DmPostCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _DmYourChatViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = DmYourChatViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "DmYourChatViewCell"
+      let name = "DmYourChatViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> DmYourChatViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DmYourChatViewCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "Image", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Image' is used in nib 'DmYourChatViewCell', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

@@ -13,6 +13,7 @@ struct Chat {
     let time: Date
     let eventName: String
     var likeCount: Int
+    let user: User
 
     var timeDescription: String {
         let df = DateFormatter()
