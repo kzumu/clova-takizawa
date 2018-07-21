@@ -51,12 +51,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `AddClovaViewController`.
+    static let addClovaViewController = _R.storyboard.addClovaViewController()
+    /// Storyboard `ClovaSpeechList`.
+    static let clovaSpeechList = _R.storyboard.clovaSpeechList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `TopViewController`.
     static let topViewController = _R.storyboard.topViewController()
+    
+    /// `UIStoryboard(name: "AddClovaViewController", bundle: ...)`
+    static func addClovaViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addClovaViewController)
+    }
+    
+    /// `UIStoryboard(name: "ClovaSpeechList", bundle: ...)`
+    static func clovaSpeechList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.clovaSpeechList)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -95,6 +109,24 @@ struct _R {
   }
   
   struct storyboard {
+    struct addClovaViewController: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = AddClovaViewController
+      
+      let bundle = R.hostingBundle
+      let name = "AddClovaViewController"
+      
+      fileprivate init() {}
+    }
+    
+    struct clovaSpeechList: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = ClovaSpeechListViewController
+      
+      let bundle = R.hostingBundle
+      let name = "ClovaSpeechList"
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
