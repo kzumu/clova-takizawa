@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F28D97BDDF5D4A0040E30F /* Pods_clova_takizawa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9E4337AF4D9C452ED127D5 /* Pods_clova_takizawa.framework */; };
 		6E91E979210321EB001EFD8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91E978210321EB001EFD8A /* AppDelegate.swift */; };
 		6E91E97B210321EB001EFD8A /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91E97A210321EB001EFD8A /* TopViewController.swift */; };
-		6E91E97E210321EB001EFD8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E91E97C210321EB001EFD8A /* Main.storyboard */; };
+		6E91E97E210321EB001EFD8A /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E91E97C210321EB001EFD8A /* TopViewController.storyboard */; };
 		6E91E980210321ED001EFD8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E91E97F210321ED001EFD8A /* Assets.xcassets */; };
 		6E91E983210321ED001EFD8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E91E981210321ED001EFD8A /* LaunchScreen.storyboard */; };
+		6EFF34DF210324CA005E7F88 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF34DE210324C9005E7F88 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B9E4337AF4D9C452ED127D5 /* Pods_clova_takizawa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clova_takizawa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E91E975210321EB001EFD8A /* clova-takizawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clova-takizawa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E91E978210321EB001EFD8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E91E97A210321EB001EFD8A /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
-		6E91E97D210321EB001EFD8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E91E97D210321EB001EFD8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TopViewController.storyboard; sourceTree = "<group>"; };
 		6E91E97F210321ED001EFD8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E91E982210321ED001EFD8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E91E984210321ED001EFD8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EFF34DE210324C9005E7F88 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		BD88503D861DBF956078096C /* Pods-clova-takizawa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clova-takizawa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clova-takizawa/Pods-clova-takizawa.debug.xcconfig"; sourceTree = "<group>"; };
+		C20B608D54AE76F3FA802058 /* Pods-clova-takizawa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clova-takizawa.release.xcconfig"; path = "Pods/Target Support Files/Pods-clova-takizawa/Pods-clova-takizawa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F28D97BDDF5D4A0040E30F /* Pods_clova_takizawa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				6E91E977210321EB001EFD8A /* clova-takizawa */,
 				6E91E976210321EB001EFD8A /* Products */,
+				D1DDFD99F8FAC7C89B5E94D6 /* Pods */,
+				703FCE45948FED59635EE54F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,32 @@
 		6E91E977210321EB001EFD8A /* clova-takizawa */ = {
 			isa = PBXGroup;
 			children = (
+				6EFF34DE210324C9005E7F88 /* R.generated.swift */,
 				6E91E978210321EB001EFD8A /* AppDelegate.swift */,
 				6E91E97A210321EB001EFD8A /* TopViewController.swift */,
-				6E91E97C210321EB001EFD8A /* Main.storyboard */,
+				6E91E97C210321EB001EFD8A /* TopViewController.storyboard */,
 				6E91E97F210321ED001EFD8A /* Assets.xcassets */,
 				6E91E981210321ED001EFD8A /* LaunchScreen.storyboard */,
 				6E91E984210321ED001EFD8A /* Info.plist */,
 			);
 			path = "clova-takizawa";
+			sourceTree = "<group>";
+		};
+		703FCE45948FED59635EE54F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B9E4337AF4D9C452ED127D5 /* Pods_clova_takizawa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1DDFD99F8FAC7C89B5E94D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD88503D861DBF956078096C /* Pods-clova-takizawa.debug.xcconfig */,
+				C20B608D54AE76F3FA802058 /* Pods-clova-takizawa.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E91E987210321ED001EFD8A /* Build configuration list for PBXNativeTarget "clova-takizawa" */;
 			buildPhases = (
+				D46CBBBF9EAF5E9BF094B24B /* [CP] Check Pods Manifest.lock */,
+				6EFF34DD210323DC005E7F88 /* ShellScript */,
 				6E91E971210321EA001EFD8A /* Sources */,
 				6E91E972210321EA001EFD8A /* Frameworks */,
 				6E91E973210321EA001EFD8A /* Resources */,
+				D5269B501D29D5D2FBEC174C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,11 +154,71 @@
 			files = (
 				6E91E983210321ED001EFD8A /* LaunchScreen.storyboard in Resources */,
 				6E91E980210321ED001EFD8A /* Assets.xcassets in Resources */,
-				6E91E97E210321EB001EFD8A /* Main.storyboard in Resources */,
+				6E91E97E210321EB001EFD8A /* TopViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EFF34DD210323DC005E7F88 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+		};
+		D46CBBBF9EAF5E9BF094B24B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-clova-takizawa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5269B501D29D5D2FBEC174C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-clova-takizawa/Pods-clova-takizawa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-clova-takizawa/Pods-clova-takizawa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E91E971210321EA001EFD8A /* Sources */ = {
@@ -137,18 +227,19 @@
 			files = (
 				6E91E97B210321EB001EFD8A /* TopViewController.swift in Sources */,
 				6E91E979210321EB001EFD8A /* AppDelegate.swift in Sources */,
+				6EFF34DF210324CA005E7F88 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6E91E97C210321EB001EFD8A /* Main.storyboard */ = {
+		6E91E97C210321EB001EFD8A /* TopViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6E91E97D210321EB001EFD8A /* Base */,
 			);
-			name = Main.storyboard;
+			name = TopViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		6E91E981210321ED001EFD8A /* LaunchScreen.storyboard */ = {
@@ -280,6 +371,7 @@
 		};
 		6E91E988210321ED001EFD8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD88503D861DBF956078096C /* Pods-clova-takizawa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +390,7 @@
 		};
 		6E91E989210321ED001EFD8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20B608D54AE76F3FA802058 /* Pods-clova-takizawa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
