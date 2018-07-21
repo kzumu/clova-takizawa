@@ -8,7 +8,19 @@
 
 import Foundation
 
+enum DmType {
+    case text(_: String)
+    case like
+}
+
 struct Dm {
-    let text: String
+    let type: DmType
+    let time: Date
     let user: User
+
+    var timeDescription: String {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        return df.string(from: time)
+    }
 }

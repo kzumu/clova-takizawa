@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class DmListViewController: UIViewController {
     static func make() -> DmListViewController {
@@ -16,6 +17,7 @@ class DmListViewController: UIViewController {
     }
 
     private var tableView: UITableView!
+    private let disposeBag = DisposeBag()
 
     override func loadView() {
         super.loadView()

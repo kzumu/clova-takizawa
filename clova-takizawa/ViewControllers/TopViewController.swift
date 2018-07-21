@@ -20,19 +20,17 @@ class TopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let item = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
-        item.rx.tap.subscribe(onNext: {
-            let vc = AddClovaViewController.make()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }).disposed(by: disposeBag)
-        navigationItem.rightBarButtonItem = item
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         tableView.reloadData()
+    }
+
+    @IBAction func addEventButtonTapped(_ sender: Any) {
+        let vc = AddClovaViewController.make()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func messageButtonTapped(_ sender: Any) {
