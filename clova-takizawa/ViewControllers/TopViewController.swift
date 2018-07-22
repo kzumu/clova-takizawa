@@ -29,6 +29,10 @@ class TopViewController: UIViewController {
 //        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
 //
 //        collectionView.collectionViewLayout = flowLayout
+
+        navigationItem.titleView = UIImageView(image: R.image.icon()!)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .black
     }
 
     override func viewWillAppear(_ animated: Bool) {
