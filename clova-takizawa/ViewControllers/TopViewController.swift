@@ -15,17 +15,31 @@ class TopViewController: UIViewController {
         return R.storyboard.topViewController.instantiateInitialViewController()!
     }
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backImageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let flowLayout = UICollectionViewFlowLayout()
+//        let margin: CGFloat = 3.0
+//        flowLayout.itemSize = CGSize(width: 100.0, height: 100.0)
+//        flowLayout.minimumInteritemSpacing = margin
+//        flowLayout.minimumLineSpacing = margin
+//        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+//
+//        collectionView.collectionViewLayout = flowLayout
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        collectionView.reloadData()
 
-        tableView.reloadData()
+        if ClovaManager.shared.registerdClovas.count == 0 {
+            backImageView.image = R.image.back2()
+        } else {
+            backImageView.image = R.image.back1()
+        }
     }
 
     @IBAction func addEventButtonTapped(_ sender: Any) {
@@ -39,26 +53,35 @@ class TopViewController: UIViewController {
     }
 }
 
-extension TopViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension TopViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ClovaManager.shared.registerdClovas.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .clear
-        cell.textLabel?.text = ClovaManager.shared.registerdClovas[indexPath.row].eventName
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.topCollectionVIewCell, for: indexPath)!
+        cell.backgroundColor = .white
+        cell.titleLabel?.text = ClovaManager.shared.registerdClovas[indexPath.row].eventName
+//        cell.imageView.image =
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let chats = [
-//            Chat(text: "hoge", time: "12:34", eventName: "<#String#>"),
-//            Chat(text: "hoge", time: "12:34"),
-//            Chat(text: "hoge", time: "12:34"),
-//        ]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ClovaSpeechListViewController.make(eventName: ClovaManager.shared.registerdClovas[indexPath.row].eventName, chats: [])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+class TopViewControllerCell: UICollectionViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+
+}
+
+extension TopViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = UIScreen.main.bounds.width / 2 - 5
+        let height = width
+        return CGSize(width: width, height: height)
+    }
+}
