@@ -32,11 +32,14 @@ class ClovaSpeechListViewController: UIViewController {
         bottomView.sendButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let me = self else { return }
+
                 me.chatManager.appendChats(
                     Chat(text: me.bottomView.chatTextField.text ?? "",
                          time: Date(), eventName: me.eventName, likeCount: 0, user: User(id: -1)
                     ))
                 self?.tableView.reloadData()
+
+                self?.callApi()
             })
             .disposed(by: disposeBag)
         tableView.register(R.nib.clovaSpeechListCell)
@@ -48,6 +51,18 @@ class ClovaSpeechListViewController: UIViewController {
 
     override var canBecomeFirstResponder: Bool {
         return true
+    }
+
+    func callApi() {
+        ClovaAPI().send(req: ClovaAPI.SpeechRequest(text: bottomView.chatTextField.text ?? ""))
+            .subscribe(onNext: { res in
+                switch res {
+                case .received(let res):
+                    print("got response ->", res)
+                case .requesting:
+                    print("requesting")
+                }
+            }).disposed(by: disposeBag)
     }
 }
 

@@ -46,6 +46,7 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.backgroundColor = .clear
         cell.textLabel?.text = ClovaManager.shared.registerdClovas[indexPath.row].eventName
         return cell
     }

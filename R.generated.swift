@@ -31,8 +31,79 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
+    /// Image `add`.
+    static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "add")
+    /// Image `back1`.
+    static let back1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "back1")
+    /// Image `back2`.
+    static let back2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "back2")
+    /// Image `back3`.
+    static let back3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "back3")
+    /// Image `background`.
+    static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+    /// Image `chat`.
+    static let chat = Rswift.ImageResource(bundle: R.hostingBundle, name: "chat")
+    /// Image `done`.
+    static let done = Rswift.ImageResource(bundle: R.hostingBundle, name: "done")
+    /// Image `home`.
+    static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "home")
+    /// Image `line_login_off`.
+    static let line_login_off = Rswift.ImageResource(bundle: R.hostingBundle, name: "line_login_off")
+    /// Image `line_login_on`.
+    static let line_login_on = Rswift.ImageResource(bundle: R.hostingBundle, name: "line_login_on")
+    
+    /// `UIImage(named: "add", bundle: ..., traitCollection: ...)`
+    static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "back1", bundle: ..., traitCollection: ...)`
+    static func back1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back1, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "back2", bundle: ..., traitCollection: ...)`
+    static func back2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "back3", bundle: ..., traitCollection: ...)`
+    static func back3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back3, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "chat", bundle: ..., traitCollection: ...)`
+    static func chat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chat, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "done", bundle: ..., traitCollection: ...)`
+    static func done(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.done, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "home", bundle: ..., traitCollection: ...)`
+    static func home(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.home, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "line_login_off", bundle: ..., traitCollection: ...)`
+    static func line_login_off(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.line_login_off, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "line_login_on", bundle: ..., traitCollection: ...)`
+    static func line_login_on(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.line_login_on, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -96,7 +167,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `AddClovaViewController`.
     static let addClovaViewController = _R.storyboard.addClovaViewController()
@@ -104,6 +175,8 @@ struct R: Rswift.Validatable {
     static let clovaSpeechList = _R.storyboard.clovaSpeechList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `LoginViewController`.
+    static let loginViewController = _R.storyboard.loginViewController()
     /// Storyboard `TopViewController`.
     static let topViewController = _R.storyboard.topViewController()
     
@@ -120,6 +193,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "LoginViewController", bundle: ...)`
+    static func loginViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.loginViewController)
     }
     
     /// `UIStoryboard(name: "TopViewController", bundle: ...)`
@@ -150,6 +228,7 @@ struct R: Rswift.Validatable {
 
 struct _R: Rswift.Validatable {
   static func validate() throws {
+    try storyboard.validate()
     try nib.validate()
   }
   
@@ -232,12 +311,23 @@ struct _R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  struct storyboard {
-    struct addClovaViewController: Rswift.StoryboardResourceWithInitialControllerType {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try topViewController.validate()
+      try addClovaViewController.validate()
+      try loginViewController.validate()
+    }
+    
+    struct addClovaViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = AddClovaViewController
       
       let bundle = R.hostingBundle
       let name = "AddClovaViewController"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "back1") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back1' is used in storyboard 'AddClovaViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "done") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'done' is used in storyboard 'AddClovaViewController', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }
@@ -260,11 +350,33 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct topViewController: Rswift.StoryboardResourceWithInitialControllerType {
+    struct loginViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LoginViewController
+      
+      let bundle = R.hostingBundle
+      let name = "LoginViewController"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "background") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "line_login_off") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'line_login_off' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "line_login_on") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'line_login_on' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct topViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = TopViewController
       
       let bundle = R.hostingBundle
       let name = "TopViewController"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "back3") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back3' is used in storyboard 'TopViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "chat") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chat' is used in storyboard 'TopViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "home") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'home' is used in storyboard 'TopViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "add") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'add' is used in storyboard 'TopViewController', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }

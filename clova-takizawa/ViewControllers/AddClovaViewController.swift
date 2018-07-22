@@ -18,6 +18,15 @@ class AddClovaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for f in [eventNameField, clovaIdField] {
+            let l = f?.layer
+            l?.masksToBounds = false
+            l?.shadowRadius = 3.0
+            l?.shadowColor = UIColor.black.cgColor
+            l?.shadowOffset = CGSize(width: 1, height: 1)
+            l?.shadowOpacity = 1.0
+        }
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {
